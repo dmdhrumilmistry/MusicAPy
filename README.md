@@ -23,6 +23,8 @@ Music API Python wrapper, currently supports limited API.
 
 - Jio Saavn API
 
+  - From Script
+
     ```python
     from musicapy.saavn_api import SaavnAPI
     
@@ -66,5 +68,36 @@ Music API Python wrapper, currently supports limited API.
     download_links = api.get_download_links(identifier)
 
     ## Albums Service
+    # get song details
     album_details = api.get_album_details(identifier)
+    
+    # get album songs download links
+    data = api.generate_album_download_links(identifier) 
+    ```
+
+  - From Command Line
+
+    ```bash
+    python3 -m musicapy.saavn_api -h
+    ```
+
+    > Command Line Output
+
+    ```bash
+    usage: __main__.py [-h] [-t] [-c] [-d] [-l LINK] [-aD] [-a] [-sS SEARCH_SONG_QUERY] [-sA SEARCH_ALBUM_QUERY] [-sa SEARCH_ALL_QUERY]
+
+    options:
+      -h, --help            show this help message and exit
+      -t, --trending        get trending songs
+      -c, --charts          get charts
+      -d, --download        generate download links
+      -l LINK, --link LINK  link of song or album
+      -aD, --album-details  get album details from link
+      -a, --album           get album download links
+      -sS SEARCH_SONG_QUERY, --search-song SEARCH_SONG_QUERY
+                            search song by name
+      -sA SEARCH_ALBUM_QUERY, --search-album SEARCH_ALBUM_QUERY
+                            search album by name
+      -sa SEARCH_ALL_QUERY, --search-all SEARCH_ALL_QUERY
+                        search album or song by name
     ```
