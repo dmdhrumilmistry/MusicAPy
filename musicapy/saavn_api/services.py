@@ -7,8 +7,7 @@ import wget
 
 
 class SearchService:
-    ''':class:`SearchService` used to search for songs based on albums or song name or all. Contains implemented to search for songs and albums, returns data in json format as python dict.
-    '''
+    ''':class:`SearchService` used to search for songs based on albums or song name or all. Contains implemented to search for songs and albums, returns data in json format as python dict.'''
     @staticmethod
     def search_song(song_query: str, page: int = 1, limit: int = 20) -> dict or bool:
         '''Searchs for songs using song name and returns data based on passed arguments
@@ -73,7 +72,7 @@ class SongService:
         return data
 
     @staticmethod
-    def get_download_links(identifier: dict):
+    def generate_song_download_links(identifier: dict):
         '''static method of :class:`SongService` Generates download links for song in various bitrate formats using identifier from JioSaavn API.
 
         :param identifier: dictionary containing `type` and `value` as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.

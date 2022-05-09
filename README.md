@@ -65,7 +65,7 @@ Music API Python wrapper, currently supports limited API.
     lyrics = api.get_song_lyrics(identifier)
 
     # get download links
-    download_links = api.get_download_links(identifier)
+    download_links = api.generate_song_download_links(identifier)
 
     ## Albums Service
     # get song details

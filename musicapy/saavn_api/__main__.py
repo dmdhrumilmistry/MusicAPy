@@ -92,7 +92,7 @@ if search_all_query:
 # generate download links
 if download_link and identifier and is_song:
     print("[SONG DOWNLOAD LINKS]")
-    download_links = api.get_download_links(identifier)
+    download_links = api.generate_song_download_links(identifier)
     pprint(download_links)
 elif not (trending or charts) and (trending or charts):
     print("[!] Cannot generate download links, song link not passed, use --help tag for more details")

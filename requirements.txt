@@ -1,1 +1,8 @@
+# for library
 requests
+wget
+
+# for documentation
+sphinx
+sphinx_rtd_theme
+myst-parser
