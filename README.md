@@ -101,3 +101,7 @@ Music API Python wrapper, currently supports limited API.
       -sa SEARCH_ALL_QUERY, --search-all SEARCH_ALL_QUERY
                         search album or song by name
     ```
+
+## License
+
+[MIT License](https://github.com/dmdhrumilmistry/MusicAPy/blob/main/LICENSE)
