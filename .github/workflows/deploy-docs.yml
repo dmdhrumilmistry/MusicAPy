@@ -1,6 +1,5 @@
 name: "Deploy Docs"
  
-# execute this workflow automatically when a we push to master
 on:
   push:
     branches: [ main ]
@@ -36,6 +35,8 @@ jobs:
           git add -A
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          # add exception to `fix fatal: unsafe repository`
+          git config --global --add safe.directory /github/workspace/docs/_build/html
           git commit -m 'deploy'
       - name: Force push to destination branch
         uses: ad-m/github-push-action@v0.5.0
