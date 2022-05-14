@@ -9,7 +9,7 @@ jobs:
   build_docs_job:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.ACTION_TOKEN }}
  
     steps:
       - name: Checkout
@@ -39,7 +39,7 @@ jobs:
       - name: Force push to destination branch
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_TOKEN }}
           branch: gh-pages
           force: true
           directory: ./docs/_build/html
