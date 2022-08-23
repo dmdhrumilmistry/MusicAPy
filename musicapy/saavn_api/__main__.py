@@ -53,7 +53,7 @@ api = SaavnAPI()
 
 # create identifier if link is present
 is_link = True if link else False
-is_song = True if 'song/' in link else False
+is_song = True if link and 'song/' in link else False
 identifier = False
 if is_link:
     identifier = api.create_identifier(link, 'song' if is_song else 'album')

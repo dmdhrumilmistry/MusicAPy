@@ -26,7 +26,7 @@ Music API Python wrapper, currently supports limited API.
   - From Script
 
     ```python
-    from musicapy.saavn_api import SaavnAPI
+    from musicapy.saavn_api.api import SaavnAPI
     
     # create API obj
     api = SaavnAPI()
