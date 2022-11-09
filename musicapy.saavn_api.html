@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>musicapy.saavn_api package &mdash; MusicAPy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Readme File" href="readme.html" />
+    <link rel="prev" title="musicapy package" href="musicapy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MusicAPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">MusicAPy</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="musicapy.html">musicapy package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="musicapy.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">musicapy.saavn_api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="musicapy.html#module-musicapy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Readme File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License File</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MusicAPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">MusicAPy</a></li>
+          <li class="breadcrumb-item"><a href="musicapy.html">musicapy package</a></li>
+      <li class="breadcrumb-item active">musicapy.saavn_api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/musicapy.saavn_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="musicapy-saavn-api-package">
+<h1>musicapy.saavn_api package<a class="headerlink" href="#musicapy-saavn-api-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-musicapy.saavn_api.api">
+<span id="musicapy-saavn-api-api-module"></span><h2>musicapy.saavn_api.api module<a class="headerlink" href="#module-musicapy.saavn_api.api" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="musicapy.saavn_api.api.SaavnAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.api.</span></span><span class="sig-name descname"><span class="pre">SaavnAPI</span></span><a class="headerlink" href="#musicapy.saavn_api.api.SaavnAPI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#musicapy.saavn_api.services.SearchService" title="musicapy.saavn_api.services.SearchService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchService</span></code></a>, <a class="reference internal" href="#musicapy.saavn_api.services.SongService" title="musicapy.saavn_api.services.SongService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SongService</span></code></a>, <a class="reference internal" href="#musicapy.saavn_api.services.AlbumService" title="musicapy.saavn_api.services.AlbumService"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlbumService</span></code></a>, <a class="reference internal" href="#musicapy.saavn_api.utils.Utils" title="musicapy.saavn_api.utils.Utils"><code class="xref py py-class docutils literal notranslate"><span class="pre">Utils</span></code></a></p>
+<p><a class="reference internal" href="#musicapy.saavn_api.api.SaavnAPI" title="musicapy.saavn_api.api.SaavnAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaavnAPI</span></code></a> class inherits all the services of the JioSaavn API used to search, get details and lyrics of songs and album</p>
+</dd></dl>
+
+</section>
+<section id="module-musicapy.saavn_api.config">
+<span id="musicapy-saavn-api-config-module"></span><h2>musicapy.saavn_api.config module<a class="headerlink" href="#module-musicapy.saavn_api.config" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-musicapy.saavn_api.endpoint">
+<span id="musicapy-saavn-api-endpoint-module"></span><h2>musicapy.saavn_api.endpoint module<a class="headerlink" href="#module-musicapy.saavn_api.endpoint" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="musicapy.saavn_api.endpoint.get_data">
+<span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.endpoint.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_v4</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.endpoint.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>Sends HTTP GET request to the Saavn API server and returns data in python dict format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api_type</strong> – str value containing Saavn api method from apis.saavnAPI.config module</p></li>
+<li><p><strong>params</strong> – dict value containing query key-value pairs</p></li>
+<li><p><strong>use_v4</strong> – bool value. If True uses API v4 else ignores it. default value <cite>True</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns a dict containing data else returns False if any status code is not 200</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="musicapy.saavn_api.endpoint.get_endpoint">
+<span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.endpoint.</span></span><span class="sig-name descname"><span class="pre">get_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_version_4</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#musicapy.saavn_api.endpoint.get_endpoint" title="Permalink to this definition"></a></dt>
+<dd><p>Get endpoint url</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api</strong> – str value, api call from apis.saavnAPI.config module</p></li>
+<li><p><strong>is_version_4</strong> – bool value, if True uses API version 4, else ignores it</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str value containing JioSaavn API endpoint</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-musicapy.saavn_api.services">
+<span id="musicapy-saavn-api-services-module"></span><h2>musicapy.saavn_api.services module<a class="headerlink" href="#module-musicapy.saavn_api.services" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.AlbumService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.services.</span></span><span class="sig-name descname"><span class="pre">AlbumService</span></span><a class="headerlink" href="#musicapy.saavn_api.services.AlbumService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference internal" href="#musicapy.saavn_api.services.AlbumService" title="musicapy.saavn_api.services.AlbumService"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlbumService</span></code></a> class provides JioSaavn API wrapper class to perform operations on albums</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.AlbumService.generate_album_download_links">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_album_download_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identfier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.AlbumService.generate_album_download_links" title="Permalink to this definition"></a></dt>
+<dd><p>Generates album song download links and returns it as dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns details along with song download links as dict, if error occurs returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.AlbumService.get_album_details">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_album_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.AlbumService.get_album_details" title="Permalink to this definition"></a></dt>
+<dd><p>Fetches album details and returns it as dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>album_query</strong> – str value, can be album link or album name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns album details as dict, if error occurs returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SearchService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.services.</span></span><span class="sig-name descname"><span class="pre">SearchService</span></span><a class="headerlink" href="#musicapy.saavn_api.services.SearchService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference internal" href="#musicapy.saavn_api.services.SearchService" title="musicapy.saavn_api.services.SearchService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchService</span></code></a> used to search for songs based on albums or song name or all. Contains implemented to search for songs and albums, returns data in json format as python dict.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SearchService.search_album">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">search_album</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">album_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SearchService.search_album" title="Permalink to this definition"></a></dt>
+<dd><p>Search for albums</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>album</em>) – str containing album name</p></li>
+<li><p><strong>page</strong> – int value containing page number</p></li>
+<li><p><strong>limit</strong> – int value representing number of results on a single page</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>False if anything goes wrong else returns python dict containing dict</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SearchService.search_all">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">search_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SearchService.search_all" title="Permalink to this definition"></a></dt>
+<dd><p>Search for songs and albums</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query</strong> – str containing query (artist, song or album name)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns dict if no error occurs else returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SearchService.search_song">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">search_song</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">song_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SearchService.search_song" title="Permalink to this definition"></a></dt>
+<dd><p>Searchs for songs using song name and returns data based on passed arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>song_query</strong> – string containing name of the song</p></li>
+<li><p><strong>page</strong> – int value used for pagination</p></li>
+<li><p><strong>limit</strong> – int value used for total results fetched on single page</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns a dict containing data if error occurs returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.services.</span></span><span class="sig-name descname"><span class="pre">SongService</span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference internal" href="#musicapy.saavn_api.services.SongService" title="musicapy.saavn_api.services.SongService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SongService</span></code></a> class wraps various JioSaavn API functions such as extracting song id, encrypted url, get trending songs, charts, etc.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.generate_song_download_links">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_song_download_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.generate_song_download_links" title="Permalink to this definition"></a></dt>
+<dd><p>static method of <a class="reference internal" href="#musicapy.saavn_api.services.SongService" title="musicapy.saavn_api.services.SongService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SongService</span></code></a> Generates download links for song in various bitrate formats using identifier from JioSaavn API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns a dictionary containing song auth url, file type and status if error occurs then returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict | bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_charts">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_charts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_charts" title="Permalink to this definition"></a></dt>
+<dd><p>Get song charts list as json data in form of dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict containing charts</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None or dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_song_details">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_song_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_v4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_song_details" title="Permalink to this definition"></a></dt>
+<dd><p>Get song details using identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p></li>
+<li><p><strong>use_v4</strong> – bool value notifying Service to use API version 4, default value is False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns data in form of dict, if error occurs or data is absent then returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_song_id">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_song_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_song_id" title="Permalink to this definition"></a></dt>
+<dd><p>Retreives Song Main Id which is used to get lyrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Song Id as str if id found else False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_song_link">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_song_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bitrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'320'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_song_link" title="Permalink to this definition"></a></dt>
+<dd><p>static method of <a class="reference internal" href="#musicapy.saavn_api.services.SongService" title="musicapy.saavn_api.services.SongService"><code class="xref py py-class docutils literal notranslate"><span class="pre">SongService</span></code></a> Generates link for song using identifier from JioSaavn API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p></li>
+<li><p><strong>bitrate</strong> – bitrate of the song, default value 320 i.e. 320 kbps</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns a dictionary containing song auth url, file type and status if error occurs then returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict | bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_song_lyrics">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_song_lyrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_song_lyrics" title="Permalink to this definition"></a></dt>
+<dd><p>Get song lyrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict containing charts</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.get_trending">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_trending</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.get_trending" title="Permalink to this definition"></a></dt>
+<dd><p>Get trending songs list as json data in form of dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict containing trending songs list</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None or dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.services.SongService.save_song">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_song</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">floc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bitrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'320'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#musicapy.saavn_api.services.SongService.save_song" title="Permalink to this definition"></a></dt>
+<dd><p>Saves song to local machine using identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifier</strong> – dictionary containing <cite>type</cite> and <cite>value</cite> as keys containing type(id or link) and its value(pids or token) respectively for JioSaavn API.</p></li>
+<li><p><strong>floc</strong> – str value, containing downloaded file location</p></li>
+<li><p><strong>bitrate</strong> – str value, bitrate of the song, default value 320 i.e. 320 kbps</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict containing trending songs list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-musicapy.saavn_api.utils">
+<span id="musicapy-saavn-api-utils-module"></span><h2>musicapy.saavn_api.utils module<a class="headerlink" href="#module-musicapy.saavn_api.utils" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="musicapy.saavn_api.utils.Utils">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">musicapy.saavn_api.utils.</span></span><span class="sig-name descname"><span class="pre">Utils</span></span><a class="headerlink" href="#musicapy.saavn_api.utils.Utils" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.utils.Utils.create_identifier">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'song'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#musicapy.saavn_api.utils.Utils.create_identifier" title="Permalink to this definition"></a></dt>
+<dd><p>Creates identifier dict used with SongService to perform various actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – str value containing link of the JioSaavn song/album</p></li>
+<li><p><strong>identifier_type</strong> – str value can be of type <cite>song</cite> or <cite>album</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns dictionary with keys <cite>type</cite> containing identifier type i.e. <cite>id</cite> or <cite>link</cite> and <cite>value</cite> key containing <cite>pids</cite> or <cite>token</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.utils.Utils.extract_id_from_link">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_id_from_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'album'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#musicapy.saavn_api.utils.Utils.extract_id_from_link" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts id from the song or album JioSaavn URL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>link</strong> – str value containing song or album URL</p></li>
+<li><p><strong>identifier_type</strong> – str value can take values <cite>song</cite> or <cite>album</cite> based on URL type</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>id from the URL as str</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.utils.Utils.generate_album_song_download_links">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_album_song_download_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">album_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.utils.Utils.generate_album_song_download_links" title="Permalink to this definition"></a></dt>
+<dd><p>Generates album song download links from data fetched from SaavnAPI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>album_details</strong> – dict value containing data fetched from SaavnAPI using <cite>AlbumService.get_album_details</cite> static method</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns album song download links as a dictionary, if error occurs returns False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict or bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="musicapy.saavn_api.utils.Utils.generate_download_links">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_download_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preview_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preview_bitrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_96_p'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#musicapy.saavn_api.utils.Utils.generate_download_links" title="Permalink to this definition"></a></dt>
+<dd><p>Generates download links from preview url extracted from previous version of Jio Saavn API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preview_link</strong> – str value containing song preview URL</p></li>
+<li><p><strong>preview_bitrate</strong> – str value containing preview bit rate, default value is <cite>_96_p</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns dictionary of bitrate as key and download link as urls i.e. { bitrate : download_link}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-musicapy.saavn_api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-musicapy.saavn_api" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="musicapy.html" class="btn btn-neutral float-left" title="musicapy package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="readme.html" class="btn btn-neutral float-right" title="Readme File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, dmdhrumilmistry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

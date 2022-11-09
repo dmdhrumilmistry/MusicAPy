@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readme File &mdash; MusicAPy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License File" href="license.html" />
+    <link rel="prev" title="musicapy.saavn_api package" href="musicapy.saavn_api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MusicAPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">MusicAPy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Readme File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#musicapy">MusicAPy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docs-deployment-status">Docs Deployment Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License File</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MusicAPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Readme File</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/readme.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="readme-file">
+<h1>Readme File<a class="headerlink" href="#readme-file" title="Permalink to this heading"></a></h1>
+<section id="musicapy">
+<h2>MusicAPy<a class="headerlink" href="#musicapy" title="Permalink to this heading"></a></h2>
+<p>Music API Python wrapper, currently supports limited API.</p>
+<ul class="simple">
+<li><p>Supported API</p>
+<ul>
+<li><p>JioSaavn</p></li>
+</ul>
+</li>
+</ul>
+<section id="docs-deployment-status">
+<h3>Docs Deployment Status<a class="headerlink" href="#docs-deployment-status" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/dmdhrumilmistry/MusicAPy/actions/workflows/deploy-docs.yml"><img alt="Deploy Docs" src="https://github.com/dmdhrumilmistry/MusicAPy/actions/workflows/deploy-docs.yml/badge.svg" /></a></p>
+</section>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Using pip and git</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m pip install git+https://github.com/dmdhrumilmistry/MusicAPy
+</pre></div>
+</div>
+</li>
+<li><p>Using pypi</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m pip install MusicAPy
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Jio Saavn API</p>
+<ul>
+<li><p>From Script</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">musicapy.saavn_api.api</span> <span class="kn">import</span> <span class="n">SaavnAPI</span>
+
+<span class="c1"># create API obj</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">SaavnAPI</span><span class="p">()</span>
+
+
+<span class="c1">## Search Services</span>
+<span class="c1"># Search Song</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search_song</span><span class="p">(</span><span class="s1">&#39;song_name&#39;</span><span class="p">)</span>
+
+<span class="c1"># Search Album</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search_album</span><span class="p">(</span><span class="s1">&#39;album_name&#39;</span><span class="p">)</span>
+
+<span class="c1"># Search All</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search_all</span><span class="p">(</span><span class="s1">&#39;song_or_album_name&#39;</span><span class="p">)</span>
+
+<span class="c1">## Song Services</span>
+<span class="c1"># get song link</span>
+<span class="n">saavn_song_link</span> <span class="o">=</span> <span class="s1">&#39;https://www.jiosaavn.com/song/song_name/id&#39;</span>
+
+<span class="c1"># create identifier</span>
+<span class="n">identifier</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_identifier</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s1">&#39;song&#39;</span><span class="p">)</span>
+
+<span class="c1"># get trending songs</span>
+<span class="n">trending_songs</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_trending</span><span class="p">()</span>
+
+<span class="c1"># get latest charts</span>
+<span class="n">charts</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_charts</span><span class="p">()</span>
+
+<span class="c1"># get song link from identifier</span>
+<span class="n">song_link</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_song_link</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+
+<span class="c1"># get song details</span>
+<span class="n">details</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_song_details</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+
+<span class="c1"># get song lyrics</span>
+<span class="n">lyrics</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_song_lyrics</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+
+<span class="c1"># get download links</span>
+<span class="n">download_links</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">generate_song_download_links</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+
+<span class="c1">## Albums Service</span>
+<span class="c1"># get song details</span>
+<span class="n">album_details</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_album_details</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+
+<span class="c1"># get album songs download links</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">generate_album_download_links</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>From Command Line</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m musicapy.saavn_api -h
+</pre></div>
+</div>
+<blockquote>
+<div><p>Command Line Output</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: __main__.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-t<span class="o">]</span> <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-d<span class="o">]</span> <span class="o">[</span>-l LINK<span class="o">]</span> <span class="o">[</span>-aD<span class="o">]</span> <span class="o">[</span>-a<span class="o">]</span> <span class="o">[</span>-sS SEARCH_SONG_QUERY<span class="o">]</span> <span class="o">[</span>-sA SEARCH_ALBUM_QUERY<span class="o">]</span> <span class="o">[</span>-sa SEARCH_ALL_QUERY<span class="o">]</span>
+
+options:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -t, --trending        get trending songs
+  -c, --charts          get charts
+  -d, --download        generate download links
+  -l LINK, --link LINK  link of song or album
+  -aD, --album-details  get album details from link
+  -a, --album           get album download links
+  -sS SEARCH_SONG_QUERY, --search-song SEARCH_SONG_QUERY
+                        search song by name
+  -sA SEARCH_ALBUM_QUERY, --search-album SEARCH_ALBUM_QUERY
+                        search album by name
+  -sa SEARCH_ALL_QUERY, --search-all SEARCH_ALL_QUERY
+                    search album or song by name
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/dmdhrumilmistry/MusicAPy/blob/main/LICENSE">MIT License</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="musicapy.saavn_api.html" class="btn btn-neutral float-left" title="musicapy.saavn_api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, dmdhrumilmistry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
