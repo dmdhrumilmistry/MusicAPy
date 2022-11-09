@@ -5,6 +5,10 @@ Music API Python wrapper, currently supports limited API.
 - Supported API
   - JioSaavn
 
+## Docs Deployment Status
+
+[![Deploy Docs](https://github.com/dmdhrumilmistry/MusicAPy/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/dmdhrumilmistry/MusicAPy/actions/workflows/deploy-docs.yml)
+
 ## Installation
 
 - Using pip and git
