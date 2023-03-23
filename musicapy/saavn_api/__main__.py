@@ -1,6 +1,7 @@
-from .api import SaavnAPI
 from argparse import ArgumentParser
 from pprint import pprint
+
+from .api import SaavnAPI
 
 # create parser
 parser = ArgumentParser()
@@ -12,14 +13,17 @@ parser.add_argument('-t', '--trending', dest='trending',
 parser.add_argument('-c', '--charts', dest='charts',
                     help='get charts', action='store_true')
 parser.add_argument('-d', '--download', dest='download_links',
-                    help='generate download links', action='store_true', default=True)
+                    help='generate download links', action='store_true',
+                    default=True)
 parser.add_argument('-l', '--link', dest='link',
                     help='link of song or album', type=str)
 
 # album services
 parser.add_argument('-aD', '--album-details',
-                    dest='album_details', help='get album details from link', default=False, action='store_true')
-parser.add_argument('-a', '--album', dest='album_download', help='get album download links',
+                    dest='album_details', help='get album details from link',
+                    default=False, action='store_true')
+parser.add_argument('-a', '--album', dest='album_download',
+                    help='get album download links',
                     default=False, action='store_true')
 
 # search services
@@ -95,7 +99,8 @@ if download_link and identifier and is_song:
     download_links = api.generate_song_download_links(identifier)
     pprint(download_links)
 elif not (trending or charts) and (trending or charts):
-    print("[!] Cannot generate download links, song link not passed, use --help tag for more details")
+    print("[!] Cannot generate download links, song link not passed, \
+          use --help tag for more details")
 
 # album details
 if album_details and not is_song:
@@ -108,7 +113,7 @@ elif album_details and is_song:
 # generate album download links
 if album_download and not is_song:
     print("[ALBUM DOWNLOAD LINKS]")
-    data = api.generate_album_download_links(identifier) 
+    data = api.generate_album_download_links(identifier)
     pprint(data)
 elif album_download and is_song:
      print("[!] Album Link is Invalid")
