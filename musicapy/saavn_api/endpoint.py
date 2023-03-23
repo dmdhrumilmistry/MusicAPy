@@ -7,7 +7,8 @@ def get_endpoint(api: str, is_version_4: bool = True) -> str:
     '''Get endpoint url
 
     :param api: str value, api call from apis.saavnAPI.config module
-    :param is_version_4: bool value, if True uses API version 4, else ignores it
+    :param is_version_4: bool value, if True uses API version 4, else ignores
+    it
 
     :return: str value containing JioSaavn API endpoint
     :rtype: str
@@ -16,13 +17,17 @@ def get_endpoint(api: str, is_version_4: bool = True) -> str:
 
 
 def get_data(api_type: str = '', params: dict = None, use_v4: bool = True) -> dict or bool:
-    '''Sends HTTP GET request to the Saavn API server and returns data in python dict format 
+    '''Sends HTTP GET request to the Saavn API server and returns data in
+    python dict format
 
-    :param api_type: str value containing Saavn api method from apis.saavnAPI.config module
+    :param api_type: str value containing Saavn api method from apis.saavnAPI.
+    config module
     :param params: dict value containing query key-value pairs
-    :param use_v4: bool value. If True uses API v4 else ignores it. default value `True`
+    :param use_v4: bool value. If True uses API v4 else ignores it. default
+    value `True`
 
-    :return: returns a dict containing data else returns False if any status code is not 200
+    :return: returns a dict containing data else returns False if any status
+    code is not 200
     :rtype: dict or bool
     '''
     endpoint = get_endpoint(config.api_types[api_type], use_v4)
