@@ -1,6 +1,6 @@
 class Utils:
     @staticmethod
-    def create_identifier(link: str, identifier_type: str = 'song'):
+    def create_identifier(identifier: str, identifier_type: str = 'song'):
         '''Creates identifier dict used with SongService to perform various actions.
 
         :param link: str value containing link of the JioSaavn song/album
@@ -9,11 +9,10 @@ class Utils:
         :return: returns dictionary with keys `type` containing identifier type i.e. `id` or `link` and `value` key containing `pids` or `token`
         :rtype: dict  
         '''
-        ID = None
-
+        is_id = isinstance(identifier, int)
         identifier = {
-            'type': 'id' if ID else 'link',
-            'value': str(ID) if ID else Utils.extract_id_from_link(link, identifier_type)
+            'type': 'id' if is_id else 'link',
+            'value': str(identifier) if is_id else Utils.extract_id_from_link(identifier, identifier_type)
         }
 
         return identifier
@@ -28,7 +27,10 @@ class Utils:
         :return: id from the URL as str
         :rtype: str
         '''
-        return link.split(f'{identifier_type}/')[1].split('/')[-1]
+        try:
+            return link.split(f'{identifier_type}/')[1].split('/')[-1]
+        except AttributeError:
+            raise TypeError('link should be of type str object.')
 
     @staticmethod
     def generate_download_links(preview_url: str, preview_bitrate: str = '_96_p') -> dict:

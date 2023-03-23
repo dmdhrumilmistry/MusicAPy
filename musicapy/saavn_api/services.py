@@ -203,23 +203,24 @@ class AlbumService:
     def get_album_details(identifier: dict) -> dict or bool:
         '''Fetches album details and returns it as dict
 
-        :param album_query: str value, can be album link or album name
+        :param identifier: dict, containing identifier type and its value.
 
         :return: returns album details as dict, if error occurs returns False
         :rtype: dict or bool
         '''
-        # check type
-        is_by_link = True if identifier.get('type', False) == 'link' else False
+        id_type = identifier.get('type')
+        id_value = identifier.get('value')
 
-        # get api type
-        api_type = 'albumDetailsByLink' if is_by_link else 'albumDetails'
-
-        # generate params
-        param = {'token' if is_by_link else 'pids': identifier['value']}
+        if id_type == 'link':
+            api_type = 'albumDetailsByLink'
+            param = {'token' : id_value}
+        elif id_type == 'id':
+            api_type = 'albumDetails'
+            param = {'albumid': id_value}
 
         # make get request and return data
-        data = get_data(api_type, param, use_v4=False)
-        return data
+        return get_data(api_type, param, use_v4=False)
+
 
     @staticmethod
     def generate_album_download_links(identfier: dict) -> dict or bool:
