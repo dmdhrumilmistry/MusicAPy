@@ -30,7 +30,7 @@ class SearchService:
         :param page: int value containing page number
         :param limit: int value representing number of results on a single page
 
-        :return: False if anything goes wrong else returns python dict containing dict  
+        :return: False if anything goes wrong else returns python dict containing dict
         :rtype: dict or bool
         '''
         return get_data('searchAlbum', params={'q': album_query, 'page': page, 'limit': limit})
@@ -66,7 +66,7 @@ class SongService:
         api_type = 'songDetailsByLink' if is_by_link else 'songDetails'
 
         # generate params
-        param = {'token' if is_by_link else 'pids': identifier['value']}
+        param = {'token' if is_by_link else 'albumid': identifier['value']}
 
         data = get_data(api_type, param, use_v4)
         return data
