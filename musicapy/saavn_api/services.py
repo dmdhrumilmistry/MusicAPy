@@ -7,7 +7,7 @@ from .utils import Utils
 
 
 import wget
-from pprint import pprint
+
 
 class SearchService:
     ''':class:`SearchService` used to search for songs based on albums or song
