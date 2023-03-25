@@ -19,6 +19,13 @@ myst-parser = {version = "^1.0.0", optional = true}
 docs = ["sphinx", "sphinx-rtd-theme", "myst-parser"]
 
 
+[tool.poetry.urls]
+"Home" = "https://github.com/dmdhrumilmistry/MusicAPy"
+"Bug Tracker" = "https://github.com/dmdhrumilmistry/MusicAPy/issues"
+"Support" = "https://github.com/sponsors/dmdhrumilmistry/"
+"PayPal" = "https://paypal.me/dmdhrumilmistry"
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
