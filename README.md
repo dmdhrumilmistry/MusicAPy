@@ -77,6 +77,22 @@ Music API Python wrapper, currently supports limited API.
     
     # get album songs download links
     data = api.generate_album_download_links(identifier) 
+
+    ## Playlist Service
+    # with featured playlist link
+    id = api.create_identifier('https://www.jiosaavn.com/featured/arijits-sad-songs/8RkefqkCO1huOxiEGmm6lQ__', None)
+
+    # with playlist link
+    id = api.create_identifier('https://www.jiosaavn.com/s/playlist/a60306bf0bd5cacc95a888a361163e07/Ppll/Iz0pi7nkjUHfemJ68FuXsA__', 'playlist')
+
+    # with playlist/list id
+    id = api.create_identifier(802336660, 'playlist')
+
+    # fetch playlist details
+    playlist_details = api.get_playlist_details(id)
+
+    # fetch Playlist song details with download links
+    playlist_songs_details = api.get_playlist_song_download_links(id)
     ```
 
   - From Command Line

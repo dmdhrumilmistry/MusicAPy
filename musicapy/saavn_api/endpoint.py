@@ -3,7 +3,7 @@ from requests import get as GET
 from json import loads as load_JSON
 
 
-def get_endpoint(api: str, is_version_4: bool = True) -> str:
+def get_endpoint(api: str, is_version_4: bool = True, include_meta_tags: bool = False) -> str:
     '''Get endpoint url
 
     :param api: str value, api call from apis.saavnAPI.config module
@@ -13,10 +13,10 @@ def get_endpoint(api: str, is_version_4: bool = True) -> str:
     :return: str value containing JioSaavn API endpoint
     :rtype: str
     '''
-    return f'{config.base_url}{"&api_version=4" if is_version_4 else ""}&__call={api}'
+    return f'{config.base_url}{"&api_version=4" if is_version_4 else ""}{"&includeMetaTags=0" if include_meta_tags else ""}&__call={api}'
 
 
-def get_data(api_type: str = '', params: dict = None, use_v4: bool = True) -> dict or bool:
+def get_data(api_type: str = '', params: dict = None, use_v4: bool = True, ) -> dict or bool:
     '''Sends HTTP GET request to the Saavn API server and returns data in
     python dict format
 
@@ -33,7 +33,7 @@ def get_data(api_type: str = '', params: dict = None, use_v4: bool = True) -> di
     endpoint = get_endpoint(config.api_types[api_type], use_v4)
     res = GET(endpoint, params=params)
     data = False
-    if res.status_code == 200:
+    if 200 <= res.status_code < 300:
         data = load_JSON(res.text)
 
     return data

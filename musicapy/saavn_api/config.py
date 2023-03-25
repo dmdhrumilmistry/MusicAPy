@@ -27,10 +27,12 @@ api_types = {
     # details by id
     'songDetails': 'song.getDetails',
     'albumDetails': 'content.getAlbumDetails',
+    'playlistDetails': 'playlist.getDetails',   # use v4, with listid={playlist_id:int}
 
     # details by link
     'songDetailsByLink': 'webapi.get&type=song',
     'albumDetailsByLink': 'webapi.get&type=album',
+    'playlistDetailsByLink': 'webapi.get&type=playlist', # supports pagination (&p=1), number of songs (&n=1000)
 
     # misc
     'homeData': 'webapi.getLaunchData',

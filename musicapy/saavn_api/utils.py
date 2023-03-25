@@ -1,11 +1,11 @@
 class Utils:
     @staticmethod
-    def create_identifier(identifier: str, identifier_type: str = 'song'):
+    def create_identifier(identifier: str or int, identifier_type: str = 'song' or 'album' or'playlist'):
         '''Creates identifier dict used with SongService to perform various
         actions.
 
-        :param link: str value containing link of the JioSaavn song/album
-        :param identifier_type: str value can be of type `song` or `album`
+        :param link: `str` or `int` value containing link or id of the JioSaavn song/album
+        :param identifier_type: str value can be of type `song`/`album`/`playlist` or `None`
 
         :return: returns dictionary with keys `type` containing identifier
         type i.e. `id` or `link` and `value` key containing `pids` or `token`
@@ -22,16 +22,19 @@ class Utils:
 
     @staticmethod
     def extract_id_from_link(link: str,
-                             identifier_type: str = 'album' or 'song'):
+                             identifier_type: str = 'album' or 'song' or 'playlist'):
         '''Extracts id from the song or album JioSaavn URL
 
         :param link: str value containing song or album URL
-        :param identifier_type: str value can take values `song` or `album`
+        :param identifier_type: str value can take values `song`/`album`/`playlist`
         based on URL type
 
         :return: id from the URL as str
         :rtype: str
         '''
+        if identifier_type is None:
+            return link.removesuffix('/').split('/')[-1]
+        
         try:
             return link.split(f'{identifier_type}/')[1].split('/')[-1]
         except AttributeError:
@@ -60,10 +63,10 @@ class Utils:
         ]
         links = dict()
         for quality in qualities:
-            id, bitrate = quality
+            _id, bitrate = quality
             download_link = preview_url.replace(
                 'preview.saavncdn.com',
-                'aac.saavncdn.com').replace(preview_bitrate, id)
+                'aac.saavncdn.com').replace(preview_bitrate, _id)
             links[bitrate] = download_link
 
         return links
