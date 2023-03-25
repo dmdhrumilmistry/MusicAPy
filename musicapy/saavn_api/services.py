@@ -1,12 +1,13 @@
 from json import loads as load_JSON
-
-import wget
 from requests import get as GET
 
 from . import config
 from .endpoint import get_data, get_endpoint
 from .utils import Utils
 
+
+import wget
+from pprint import pprint
 
 class SearchService:
     ''':class:`SearchService` used to search for songs based on albums or song
@@ -279,3 +280,121 @@ class AlbumService:
         }
 
         return data
+
+
+class PlaylistService:
+    ''':class:`PlaylistService` class provides JioSaavn API wrapper class to
+    perform operations on playlists'''
+
+    @staticmethod
+    def get_playlist_details(identifier):
+        '''Fetches Playlist details returns it as dict
+
+        :param identifier: dictionary containing `type` and `value` as keys
+        containing type(id or link) and its value(pids or token) respectively
+        for JioSaavn API.
+
+        :return: returns playlist details along with songs download links
+        :rtype: dict
+        '''
+        id_type = identifier.get('type')
+        id_value = identifier.get('value')
+
+        playlist_details = None
+        if id_type == 'link':
+            api_type = 'playlistDetailsByLink'
+            param = {
+                'token': id_value,
+                'n':9999 # number of songs ## temporary fix instead of using pagination
+                # 'p' : 1 ## TODO: for pagination
+            }
+            use_v4 = False
+            
+        elif id_type == 'id':
+            api_type = 'playlistDetails'
+            param = {'listid': id_value}
+            use_v4 = True
+
+        playlist_details = get_data(api_type, param, use_v4)
+
+        if not playlist_details:
+            return None
+        
+        # add download links to songs
+        if id_type == 'link':
+            song_details = PlaylistService.__get_playlist_song_download_links_by_link(playlist_details)
+        elif id_type == 'id':
+            song_details = PlaylistService.__get_playlist_song_download_links_by_id(playlist_details)
+
+        playlist_details['songs'] = song_details
+
+        return playlist_details
+
+
+    @staticmethod
+    def get_playlist_song_download_links(identifier):
+        '''Fetches Songs details from a playlist with download links and 
+        returns it as dict
+
+        :param identifier: dictionary containing `type` and `value` as keys
+        containing type(id or link) and its value(pids or token) respectively
+        for JioSaavn API.
+
+        :return: returns playlist songs details and download links as dict, if
+        error occurs returns False
+        :rtype: dict or bool
+        '''
+        res = PlaylistService.get_playlist_details(identifier)
+
+        if not res:
+            return None
+        
+        return res.get('songs', None)
+    
+    @staticmethod
+    def __get_playlist_song_download_links_by_link(playlist_details:dict) -> dict:
+        '''Generates song download links using playlist details fetched from API
+        using link and returns it as dict.
+
+        :param playlist_details: dictionary containing playlist details fetched
+        from jiosaavn API.
+
+        :return: returns playlist songs details and download links as dict.
+        :rtype: dict or bool
+        '''
+        song_details = playlist_details.get('songs', {})
+        for song in song_details:
+            preview_link = song.get('media_preview_url', False)
+            download_links = Utils.generate_download_links(preview_link) if preview_link else None
+            song['download_links'] = download_links
+
+        return song_details
+    
+    @staticmethod
+    def __get_playlist_song_download_links_by_id(playlist_details:dict) -> list:
+        '''Generates song download links using playlist details fetched from API
+        using listid and returns it as dict.
+
+        :param playlist_details: dictionary containing playlist details fetched
+        from jiosaavn API.
+
+        :return: returns playlist songs details and download links as dict.
+        :rtype: dict or bool
+        '''
+        songs_list = playlist_details.get('list', [])
+        songs_details = []
+
+        # TODO: fetch songs asynchronously
+        for song in songs_list:
+            perma_url = song.get('perma_url')
+            song_identifier = Utils.create_identifier(perma_url, 'song')
+            song_details = SongService.get_song_details(song_identifier, use_v4=False).get('songs')[0]
+
+            # extract preview urls and generate download links
+            song_preview_url = song_details.get('media_preview_url', False)
+            download_links = Utils.generate_download_links(song_preview_url)
+
+            song_details['download_links'] = download_links
+            songs_details.append(song_details)
+
+        return songs_details
