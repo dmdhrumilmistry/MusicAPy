@@ -259,8 +259,19 @@ class AlbumService:
             api_type = 'albumDetails'
             param = {'albumid': id_value}
 
+        album_details = get_data(api_type, param, use_v4=False)
+        if album_details:
+            songs_details = []
+            for song in album_details.get('songs',[]):
+                perma_url = song.get('perma_url')
+                song_identifier = Utils.create_identifier(perma_url, 'song')
+                song_details = SongService.get_song_details(song_identifier, use_v4=False)
+                songs_details.append(song_details)
+                
+            album_details['songs'] = song_details
+
         # make get request and return data
-        return get_data(api_type, param, use_v4=False)
+        return album_details
 
     @staticmethod
     def generate_album_download_links(identfier: dict) -> dict or bool:
