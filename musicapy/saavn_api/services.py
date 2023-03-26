@@ -84,8 +84,12 @@ class SongService:
         # generate params
         param = {'token' if is_by_link else 'albumid': identifier['value']}
 
-        data = get_data(api_type, param, use_v4)
-        return data
+        song_details = get_data(api_type, param, use_v4)
+        
+        if song_details:
+            song_details = song_details.get('songs')[0]
+
+        return song_details
 
     @staticmethod
     def generate_song_download_links(identifier: dict):
@@ -102,17 +106,16 @@ class SongService:
         '''
         # does not work with API version 4
         song_details = SongService.get_song_details(identifier, use_v4=False)
-        if not song_details:
-            return False
+        
+        if song_details:
+            # extract preview urls
+            preview_url = song_details.get('media_preview_url', False)
 
-        # extract preview urls
-        preview_url = song_details['songs'][0].get('media_preview_url', False)
-        if not preview_url:
-            return False
-
-        # generate download links and return
-        download_links = Utils.generate_download_links(preview_url)
-        return download_links
+            # generate download links and return
+            download_links = Utils.generate_download_links(preview_url)
+            return download_links
+        
+        return False
 
     @staticmethod
     def get_song_link(identifier: dict, bitrate: str = '320') -> dict or bool:
