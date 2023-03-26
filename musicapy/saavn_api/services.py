@@ -260,6 +260,7 @@ class AlbumService:
             param = {'albumid': id_value}
 
         album_details = get_data(api_type, param, use_v4=False)
+
         if album_details:
             songs_details = []
             for song in album_details.get('songs',[]):
@@ -268,7 +269,7 @@ class AlbumService:
                 song_details = SongService.get_song_details(song_identifier, use_v4=False)
                 songs_details.append(song_details)
                 
-            album_details['songs'] = song_details
+            album_details['songs'] = songs_details
 
         # make get request and return data
         return album_details
