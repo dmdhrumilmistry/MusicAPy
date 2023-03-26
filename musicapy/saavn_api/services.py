@@ -89,6 +89,14 @@ class SongService:
         if song_details:
             song_details = song_details.get('songs')[0]
 
+            # extract preview urls
+            preview_url = song_details.get('media_preview_url', False)
+
+            # generate download links and return
+            download_links = Utils.generate_download_links(preview_url)
+
+            song_details['download_links'] = download_links
+
         return song_details
 
     @staticmethod
@@ -108,13 +116,11 @@ class SongService:
         song_details = SongService.get_song_details(identifier, use_v4=False)
         
         if song_details:
-            # extract preview urls
-            preview_url = song_details.get('media_preview_url', False)
+            return song_details.get(
+                'download_links',
+                {'msg':'no media_preview_url found in song details'}
+            )
 
-            # generate download links and return
-            download_links = Utils.generate_download_links(preview_url)
-            return download_links
-        
         return False
 
     @staticmethod
