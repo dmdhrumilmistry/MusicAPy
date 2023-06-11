@@ -1,4 +1,5 @@
 from . import config
+from .utils import Utils
 from requests import get as GET
 from json import loads as load_JSON
 
@@ -36,10 +37,6 @@ def get_data(api_type: str = '', params: dict = None, use_v4: bool = True, ) -> 
     
     if 200 <= res.status_code < 300:
         data = load_JSON(res.text)
-        try:
-            # remove unused key
-            data.pop('modules')
-        except KeyError:
-            pass
+        Utils.remove_unused_keys(data)
 
     return data
