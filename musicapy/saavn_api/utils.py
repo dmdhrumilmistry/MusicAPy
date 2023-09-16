@@ -92,3 +92,26 @@ class Utils:
                  "links": Utils.generate_download_links(preview_link)})
 
         return songs_links
+
+    @staticmethod
+    def remove_unused_keys(api_res):
+        '''Removes unused data from the api response
+
+        :param api_res: dict or list value containing data fetched from SaavnAPI
+        using `AlbumService.get_album_details` static method
+
+        :return: returns album song download links as a dictionary or list, if error
+        :rtype: dict or list
+        '''
+        data = api_res
+        data_type = type(data)
+        try:
+            # remove unused key
+            if data_type == list:
+                for api_data in data:
+                    api_data.pop['modules']
+            else:
+                data.pop('modules')
+        except KeyError:
+            pass
+        return data
